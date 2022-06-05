@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form action="salvar" method="post">
+        <label for="">nome</label>
+        <input name="name">
+        <label for="">descrição</label>
+        <input name="description">
+        <label for="">estoque</label>
+        <input name="inventory">
+        <label for="">preço</label>
+        <input name="price">
+        <input type="submit" value="salvar">
+    </form>
+    <form action="listar" method="get">
+        <input type="submit" value="listar">
+          <table>
+        <tr th:each = "list : ${list}">
+            <td th:text = "${list.id}"></td>
+            <td th:text = "${list.name}"></td>
+            <td th:text = "${list.description}"></td>
+            <td th:text = "${list.price}"></td>
+            <td th:text = "${list.inventory}"></td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
